@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="app/favicon.ico" />
+  <meta name="theme-color" content="#000000" />
+
+  <title>Send WhatsApp Message</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.1/css/flag-icon.css" rel="stylesheet" crossorigin="anonymous">
+  <script type="text/javascript" src="mobiledetect.min.js" async></script>
+  <script type="text/javascript" src="constants.js" async></script>
+  <script type="text/javascript">
+  const setup = (function () {
+    // console.log('setup');
+    document.getElementById('sendMessage').onsubmit = function (e) {
+      e.preventDefault();
+      console.log('click');
+      const name = document.getElementById('name').value;
+      const endereco = document.getElementById('endereco').value;
+    //   const number = (document.getElementById('number').value || '')
+    //     .replace(/\D/g, '')
+    //     .replace(new RegExp(`^${country}`), '');
+    
+      
+      if (!number) {
+        alert('Invalid number');
+        return;
+      }
+      // const link = `https://wa.me/${country}${number}?text=${text}`;
+      link = `https://web.whatsapp.com/send?phone=${country}${number}&text=${NOME+name+LINE_BREAK+ADRESS+endereco+LINE_BREAK+COMPLEMENT}`;
+      if ((new MobileDetect(window.navigator.userAgent)).mobile()) {
+        link = `https://api.whatsapp.com/send?phone=${country}${number}&text=${text}`;
+      }
+      console.log(number, link);
+      window.open(link);
+    };
+  })
+  if (window.attachEvent) {
+    window.attachEvent('onload', setup);
+  } else {
+    window.addEventListener('load', setup, false);
+  }
+  </script>
+</head>
+<body>
+<div class="container">
+  <div class="jumbotron align-middle">
+    <h1 class="display-4">Formulário de compra</h1>
+    <p class="lead">Escreva as informações conforme os campos. Os dados serão enviados para o nosso WhatsApp</p>
+    <form method="POST" id="sendMessage">
+      <div class="input-group mb-3">
+        <!-- <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">
+            <span class="flag-icon flag-icon-br"></span>
+          </span>
+        </div> -->
+
+        <div class="form-group col-md-6">
+            <label for="inputName4">Nome</label>
+            <input type="text" class="form-control" id="name">
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="inputAddress">Endereço</label>
+            <input type="text" class="form-control" id="endereco" placeholder="Rua Alfonso correia, número 23, cidade Vitória, bairro São José">
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="inputAddress2">Complemento</label>
+            <input type="text" class="form-control" id="complemento" placeholder="Apartamento, casa própria">
+          </div>
+        <!-- <input type="mensagem" id="text" class="form-control" placeholder="(Opcional) Mensagem" aria-label="Shop" autocomplete="off"> -->
+      </div>
+      <button id="send" class="btn btn-success btn-lg btn-block fa fa-whatsapp" style="font-size:20px" >Abrir WhatsApp</button>
+    </form>
+  </div>
+  <div class="navbar navbar-light bg-light ">
+    <a href="https://blog.ateliedocodigo.com.br/mandando-mensagens-no-whatsapp-sem-adicionar-aos-contatos-a82ff1e6700c" target="_blank">Mais informações</a>
+  </div>
+</div>
+</body>
+</html>
