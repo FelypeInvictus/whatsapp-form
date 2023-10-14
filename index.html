@@ -33,7 +33,7 @@
         return;
       }
       // const link = `https://wa.me/${country}${number}?text=${text}`;
-      link = `https://web.whatsapp.com/send?phone=${country}${number}&text=${NOME+name+LINE_BREAK+ADRESS+endereco+LINE_BREAK+COMPLEMENT}`;
+      link = `https://web.whatsapp.com/send?phone=${country}${number}&text=${NOME+name+LINE_BREAK+ADRESS+endereco+LINE_BREAK+COMPLEMENT+LINE_BREAK+estado}`;
       if ((new MobileDetect(window.navigator.userAgent)).mobile()) {
         link = `https://api.whatsapp.com/send?phone=${country}${number}&text=${text}`;
       }
