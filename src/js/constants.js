@@ -4,7 +4,7 @@
 
 
     //const LINE_SPACE = '%20';
-    const LINE_BREAK = '%0A'
+    const LINE_BREAK = '%0A';
     
       const country = '55';
 
