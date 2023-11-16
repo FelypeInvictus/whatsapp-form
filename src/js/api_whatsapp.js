@@ -14,10 +14,9 @@ var number = window.prompt("Por favor, insira seu número:");
         alert('Número inválido!');
         return;
       }
-      
+
       link = `https://web.whatsapp.com/send?phone=${CODE_COUNTRY}${number}&text=${MESSAGE+LINE_BREAK+NAME+name+LINE_BREAK+ADRESS+endereco+LINE_BREAK+COMPLEMENT+complemento+LINE_BREAK+STATE+estado}`;
       if ((new MobileDetect(window.navigator.userAgent)).mobile()) {
-        console.log("chegou aqui");
         link = `https://api.whatsapp.com/send?phone=${CODE_COUNTRY}${number}&text=${MESSAGE+LINE_BREAK+NAME+name+LINE_BREAK+ADRESS+endereco+LINE_BREAK+COMPLEMENT+complemento+LINE_BREAK+STATE+estado}`;
       }
       console.log(number, link);
