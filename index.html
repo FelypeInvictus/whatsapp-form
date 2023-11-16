@@ -5,47 +5,12 @@
   <link rel="shortcut icon" href="app/favicon.ico" />
   <meta name="theme-color" content="#000000" />
 
-  <title>Send WhatsApp Message</title>
+  <title>Envio de formulario</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.1/css/flag-icon.css" rel="stylesheet" crossorigin="anonymous">
-  <script type="text/javascript" src="src/js/constants.js" async></script>
-  <script type="text/javascript" src="src/js/mobiledetect.min.js" async></script>
-  
-  <script type="text/javascript">
-  var number = window.prompt("Por favor, insira seu número:");
-  const setup = (function () {
-    // console.log('setup');
-    document.getElementById('sendMessage').onsubmit = function (e) {
-      e.preventDefault();
-      console.log('click');
-      const name = document.getElementById('name').value;
-      const endereco = document.getElementById('endereco').value;
-      const complemento = document.getElementById('complemento').value;
-      const estado = document.getElementById('estado').value;
-
-      
-      if (!number) {
-        alert('Invalid number');
-        return;
-      }
-      // const link = `https://wa.me/${country}${number}?text=${text}`;
-      link = `https://web.whatsapp.com/send?phone=${CODE_COUNTRY}${number}&text=${MESSAGE+LINE_BREAK+NAME+name+LINE_BREAK+ADRESS+endereco+LINE_BREAK+COMPLEMENT+complemento+LINE_BREAK+STATE+estado}`;
-      if ((new MobileDetect(window.navigator.userAgent)).mobile()) {
-        link = `https://api.whatsapp.com/send?phone=${CODE_COUNTRY}${number}&text=${text}`;
-      }
-      console.log(number, link);
-      window.open(link);
-    };
-  })
-  if (window.attachEvent) {
-    window.attachEvent('onload', setup);
-  } else {
-    window.addEventListener('load', setup, false);
-  }
-  </script>
 </head>
 <body>
 <div class="container">
@@ -54,12 +19,6 @@
     <p class="lead">Escreva as informações conforme os campos. Os dados serão enviados para o nosso WhatsApp</p>
     <form method="POST" id="sendMessage">
       <div class="input-group mb-3">
-        <!-- <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">
-            <span class="flag-icon flag-icon-br"></span>
-          </span>
-        </div> -->
-
         <div class="form-group col-md-6">
             <label for="inputName4">Nome</label>
             <input type="text" class="form-control" id="name">
@@ -107,11 +66,13 @@
             <option value="TO">Tocantins</option>
         </select>
           </div>
-        <!-- <input type="mensagem" id="text" class="form-control" placeholder="(Opcional) Mensagem" aria-label="Shop" autocomplete="off"> -->
       </div>
       <button id="send" class="btn btn-success btn-lg btn-block fa fa-whatsapp" style="font-size:20px" >Abrir WhatsApp</button>
     </form>
   </div>
 </div>
+<script type="text/javascript" src="src/js/constants.js" async></script>
+<script type="text/javascript" src="src/js/mobiledetect.min.js" async></script>
+<script type="text/javascript" src="src/js/api_whatsapp.js"></script>
 </body>
 </html>
