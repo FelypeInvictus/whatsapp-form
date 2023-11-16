@@ -1,84 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="utf-8" />
-  <link rel="shortcut icon" href="app/favicon.ico" />
-  <meta name="theme-color" content="#000000" />
-
   <title>Envio de formulario</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.1/css/flag-icon.css" rel="stylesheet" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.1/css/flag-icon.css" rel="stylesheet"
+    crossorigin="anonymous">
 </head>
+
 <body>
-<div class="container">
-  <div class="jumbotron align-middle">
-    <h1 class="display-4">Formulário de compra</h1>
-    <p class="lead">Escreva as informações conforme os campos. Os dados serão enviados para o nosso WhatsApp</p>
-    <form method="POST" id="sendMessage">
-      <div class="input-group mb-3">
-        <div class="form-group col-md-6">
+  <div class="container">
+    <div class="jumbotron align-middle">
+      <h1 class="display-4">Formulário de compra</h1>
+      <p class="lead">Escreva as informações conforme os campos. Os dados serão enviados para o nosso WhatsApp</p>
+      <form method="POST" id="sendMessage">
+        <div class="input-group mb-3">
+          <div class="form-group col-md-6">
+            <!--NOME-->
             <label for="inputName4">Nome</label>
             <input type="text" class="form-control" id="name">
           </div>
-
+          <!--ENDEREÇO-->
           <div class="form-group col-md-6">
             <label for="inputAddress">Endereço</label>
-            <input type="text" class="form-control" id="endereco" placeholder="Rua Alfonso correia, número 23, cidade Vitória, bairro São José">
+            <input type="text" class="form-control" id="endereco"
+              placeholder="Rua Alfonso correia, número 23, cidade Vitória, bairro São José">
           </div>
-
+          <!--COMPLEMENTO-->
           <div class="form-group col-md-6">
             <label for="inputAddress2">Complemento</label>
             <input type="text" class="form-control" id="complemento" placeholder="Apartamento, casa própria">
           </div>
-
+          <!--ESTADOS-->
           <div class="form-group col-md-2">
             <label for="exampleFormControlSelect1">Estado</label>
-          <select class="form-control" id="estado" name="estado">
-            <option value="AC">Acre</option>
-            <option value="AL">Alagoas</option>
-            <option value="AP">Amapá</option>
-            <option value="AM">Amazonas</option>
-            <option value="BA">Bahia</option>
-            <option value="CE">Ceará</option>
-            <option value="DF">Distrito Federal</option>
-            <option value="ES">Espírito Santo</option>
-            <option value="GO">Goiás</option>
-            <option value="MA">Maranhão</option>
-            <option value="MT">Mato Grosso</option>
-            <option value="MS">Mato Grosso do Sul</option>
-            <option value="MG">Minas Gerais</option>
-            <option value="PA">Pará</option>
-            <option value="PB">Paraíba</option>
-            <option value="PR">Paraná</option>
-            <option value="PE">Pernambuco</option>
-            <option value="PI">Piauí</option>
-            <option value="RJ">Rio de Janeiro</option>
-            <option value="RN">Rio Grande do Norte</option>
-            <option value="RS">Rio Grande do Sul</option>
-            <option value="RO">Rondônia</option>
-            <option value="RR">Roraima</option>
-            <option value="SC">Santa Catarina</option>
-            <option value="SP">São Paulo</option>
-            <option value="SE">Sergipe</option>
-            <option value="TO">Tocantins</option>
-        </select>
+            <select class="form-control" id="estado" name="estado">
+              <option value="AC">Acre</option>
+              <option value="AL">Alagoas</option>
+              <option value="AP">Amapá</option>
+              <option value="AM">Amazonas</option>
+              <option value="BA">Bahia</option>
+              <option value="CE">Ceará</option>
+              <option value="DF">Distrito Federal</option>
+              <option value="ES">Espírito Santo</option>
+              <option value="GO">Goiás</option>
+              <option value="MA">Maranhão</option>
+              <option value="MT">Mato Grosso</option>
+              <option value="MS">Mato Grosso do Sul</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="PA">Pará</option>
+              <option value="PB">Paraíba</option>
+              <option value="PR">Paraná</option>
+              <option value="PE">Pernambuco</option>
+              <option value="PI">Piauí</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="RN">Rio Grande do Norte</option>
+              <option value="RS">Rio Grande do Sul</option>
+              <option value="RO">Rondônia</option>
+              <option value="RR">Roraima</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="SP">São Paulo</option>
+              <option value="SE">Sergipe</option>
+              <option value="TO">Tocantins</option>
+            </select>
           </div>
-      </div>
-      <button id="send" class="btn btn-success btn-lg btn-block fa fa-whatsapp" style="font-size:20px" >Abrir WhatsApp</button>
-    </form>
-    <!-- Footer -->
-    <footer class="page-footer font-small blue">
-      <div class="footer-copyright text-center py-3">© 2023 Copyright:
-        <a href="https://felypeinvictus.github.io/my-profile/" target="_blank">Felype Rangel </a>
-      </div>
-    </footer>
+        </div>
+        <button id="send" class="btn btn-success btn-lg btn-block fa fa-whatsapp" style="font-size:20px">Abrir
+          WhatsApp</button>
+      </form>
+      <!-- Footer -->
+      <footer class="page-footer font-small blue">
+        <div class="footer-copyright text-center py-3">© 2023 Copyright:
+          <a href="https://felypeinvictus.github.io/my-profile/" target="_blank">Felype Rangel </a>
+        </div>
+      </footer>
+    </div>
   </div>
-</div>
-<script type="text/javascript" src="src/js/constants.js" async></script>
-<script type="text/javascript" src="src/js/mobiledetect.min.js" async></script>
-<script type="text/javascript" src="src/js/api_whatsapp.js"></script>
+  <script type="text/javascript" src="src/js/constants.js" async></script>
+  <script type="text/javascript" src="src/js/mobiledetect.min.js" async></script>
+  <script type="text/javascript" src="src/js/api_whatsapp.js"></script>
 </body>
+
 </html>
