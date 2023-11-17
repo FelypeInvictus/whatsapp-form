@@ -11,7 +11,11 @@ var number = window.prompt("Por favor, insira seu número:");
 
       
       if (!number) {
-        alert('Número inválido!');
+        Swal.fire({
+          title: "Número não inserido!",
+          text: "O número do celular não foi inserido. Atualiza a página!'",
+          icon: "error"
+        });
         return;
       }
 
